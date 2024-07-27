@@ -13,6 +13,10 @@ var last = data.LastPage(PAGE_SIZE).ToList();
 Console.WriteLine("--------- Last");
 last.ForEach(i => Console.WriteLine(i));
 
+var lastBest = data.LastPageBest(PAGE_SIZE).ToList();
+Console.WriteLine("--------- Last Best");
+lastBest.ForEach(i => Console.WriteLine(i));
+
 var page5 = data.Pagination(PAGE_INDEX, PAGE_SIZE).ToList();
 Console.WriteLine("--------- page 5");
 page5.ForEach(i => Console.WriteLine(i));
