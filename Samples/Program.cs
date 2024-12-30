@@ -23,3 +23,14 @@ page5.ForEach(i => Console.WriteLine(i));
 
 var countOfPages = data.PageCount(PAGE_SIZE);
 Console.WriteLine($"Count of pages : {countOfPages}");
+
+var newData = Enumerable.Range(1,40000000).Select(x=> new Model { 
+    Id = x,
+    RandomData = Random.Shared.Next(10000000,99999999),
+}).ToList();
+
+
+/*
+ * in this senario we should save last id
+ */
+newData.QuickPagination(120000, PAGE_SIZE);
