@@ -8,6 +8,9 @@ public static class Extensions
     public static IEnumerable<T> Pagination<T>(this IEnumerable<T> data, int pageIndex, int pageSize) =>
         data.Skip(pageIndex * pageSize).Take(pageSize);
 
+    public static IEnumerable<T> PaginationFaster<T>(this IEnumerable<T> data, int pageIndex, int pageSize) =>
+        data.Take((pageIndex * pageSize)..pageSize);
+
     public static IEnumerable<T> FirstPage<T>(this IEnumerable<T> data, int PageSize) =>
         data.Take(PageSize);
 

@@ -21,6 +21,10 @@ var page5 = data.Pagination(PAGE_INDEX, PAGE_SIZE).ToList();
 Console.WriteLine("--------- page 5");
 page5.ForEach(i => Console.WriteLine(i));
 
+var page6 = data.PaginationFaster(PAGE_INDEX, PAGE_SIZE).ToList();
+Console.WriteLine("--------- page faster");
+page5.ForEach(i => Console.WriteLine(i));
+
 var countOfPages = data.PageCount(PAGE_SIZE);
 Console.WriteLine($"Count of pages : {countOfPages}");
 
